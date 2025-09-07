@@ -2,10 +2,18 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import OpenAI from "openai"; // 公式SDK
+import fs from "fs";
+import path from "path";
 
 dotenv.config();
-
 const app = express();
+const PROMPT_FILE = path.resolve("prompts.json");
+
+// プロンプト一覧取得
+app.get("/api/prompts", (req, res) => {
+  const data = JSON.parse(fs.readFileSync(PROMPT_FILE, "utf-8"));
+  res.json(data);
+});
 
 // 開発中: CRA は 3000 で動く想定。必要に応じて許可オリジンを調整。
 app.use(
