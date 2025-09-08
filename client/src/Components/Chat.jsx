@@ -94,8 +94,11 @@ export default function Chat() {
             <div><strong>AI:</strong> {item.reply}</div>
           </div>
         ))}
-    </div>
+      </div>
+    <footer style={{ textAlign: "center", marginTop: 24, color: "#666" }}>
+      <img src="/OpenAI-black-monoblossom.svg" alt="OpenAI Logo" style={{ height: 24, verticalAlign: "middle" }} />
+      <span style={{ marginLeft: 8 }}>Powered by OpenAI</span>
+    </footer>
    </div>
   );
 }
-
