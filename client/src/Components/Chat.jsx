@@ -60,6 +60,7 @@ export default function Chat() {
           style={{ height: 32 }}
         />
 	  <h1>Chatbot デモ</h1>
+          <small style={{ color: "#666" }}>Powered by OpenAI</small>
       </header>
       <p>定型業務に便利なプロンプト選択を搭載しました。</p>
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 8 }}>
