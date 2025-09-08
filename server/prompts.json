@@ -1,6 +1,15 @@
 [
-  { "id": 1, "name": "APA形式のサイテーション作成", "content": "次のURLをもとに、APA7形式のサイテーションを作成せよ：" },
-  { "id": 2, "name": "文章要約", "content": "以下の文章を200文字以内で要約せよ：" },
+  {
+    "id": 1,
+    "name": "APA7 Citation",
+    "description": "Generate an APA7 citation from a URL or book info",
+    "prompt": "次のルールでAPA7形式の引用を作成せよ：\n- 著者、出版年、書籍名、出版社を含める\n- 書籍名は必ずイタリックにする\n- 出力形式はMarkdownで、書籍名は*で囲む\nURLまたは書籍情報: {{input}}"
+  },
+  {
+    "id": 2,
+    "name": "Summarize Article",
+    "description": "Summarize a given article in simple language",
+    "prompt": "以下の文章を簡単な日本語で要約せよ: {{input}}"
+  },
   { "id": 3, "name": "翻訳（日→英）", "content": "次の文章を英語に翻訳してください：" }
 ]
-
