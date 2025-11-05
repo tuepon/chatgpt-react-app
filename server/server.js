@@ -119,6 +119,19 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
+// ---------- React ビルド済みファイルを提供 ----------
+import { dirname } from "path"; // ← 忘れずに冒頭でimport済みでOK
+
+const clientBuildPath = path.join(__dirname, "../client/build");
+
+// 静的ファイル配信
+app.use(express.static(clientBuildPath));
+
+// React Router対応: どのルートでも index.html を返す
+app.get("*", (req, res) => {
+  res.sendFile(path.join(clientBuildPath, "index.html"));
+});
+
 // === 🚀 ポート起動 ===
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
