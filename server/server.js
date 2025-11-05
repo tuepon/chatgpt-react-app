@@ -125,8 +125,8 @@ const clientBuildPath = path.join(__dirname, "../client/build");
 // 静的ファイル配信
 app.use(express.static(clientBuildPath));
 
-// React Router対応: どのルートでも index.html を返す
-app.get("/*", (req, res) => {
+// React Router対応: どのルートでも index.html を返す（安全版）
+app.use((req, res) => {
   res.sendFile(path.join(clientBuildPath, "index.html"));
 });
 
