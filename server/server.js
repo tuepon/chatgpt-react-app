@@ -126,7 +126,7 @@ const clientBuildPath = path.join(__dirname, "../client/build");
 app.use(express.static(clientBuildPath));
 
 // React Router対応: どのルートでも index.html を返す
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join(clientBuildPath, "index.html"));
 });
 
