@@ -17,6 +17,12 @@ const __dirname = dirname(__filename);
 // === 📘 prompts.json の絶対パス ===
 const PROMPT_FILE = path.resolve(__dirname, "prompts.json");
 
+// === 🌍 環境に応じた CORS 設定 ===
+const allowedOrigins = [
+  "http://localhost:3000", // 開発環境
+  "https://chatgpt-react-app-vmeb.onrender.com/", // ← RenderのURL
+];
+
 // === 🌐 Render環境用 CORS設定 ===
 app.use(
   cors({
