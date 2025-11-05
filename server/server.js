@@ -120,8 +120,6 @@ app.post("/api/chat", async (req, res) => {
 });
 
 // ---------- React ビルド済みファイルを提供 ----------
-import { dirname } from "path"; // ← 忘れずに冒頭でimport済みでOK
-
 const clientBuildPath = path.join(__dirname, "../client/build");
 
 // 静的ファイル配信
